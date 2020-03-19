@@ -3,9 +3,12 @@ import random
 
 def pop(popSize):
 	population = []
-	for i in range(0,popSize):
+	i = 0
+	while i < popSize:
 		individual = []
 		for j in range(0,75):
 			individual.append(random.randint(0,1))
-		population.append(individual)
+		if individual not in population:	
+			population.append(individual)
+			i += 1				
 	return population
